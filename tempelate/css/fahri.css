@@ -1,0 +1,20 @@
+.login-wrap .login-form .form-group{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.login-wrap .login-form label{
+	float: left;
+	margin-bottom: 5px;
+}
+.form-group .radio .form-check-label{
+	float: none;
+	display: inline-block;
+
+}
+.radio{
+    display: table;
+}
+.form-group .form-check .radio {
+    max-inline-size: fit-content;
+}
