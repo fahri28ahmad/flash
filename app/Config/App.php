@@ -23,7 +23,18 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost:8080/';
+    public $baseURL;
+
+    public function __construct()
+    {
+        if($_SERVER['SERVER_NAME']== 'flashlab.local') {
+            $this->baseURL = 'http://flashlab.local/';
+        }else if($_SERVER['SERVER_NAME'] == "localhost"){
+            $this->baseURL = 'http://localhost:8080/';
+        }else{
+            $this->baseURL = 'http://10.0.2.2/';
+        }
+    }
 
 	/**
 	 * --------------------------------------------------------------------------

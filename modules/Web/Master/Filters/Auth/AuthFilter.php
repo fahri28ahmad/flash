@@ -1,0 +1,49 @@
+<?php
+
+namespace WebRoot\Master\Filters\Auth;
+
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Filters\FilterInterface;
+use Config\Services as SVC;
+use BusinessProcessRoot\Master\Models\User as UserModel;
+
+class AuthFilter implements FilterInterface
+{
+	public $redirect = array(
+		'admin_redirect' => "admin.login.view",
+		'user_redirect' => "user.login.view"
+	);
+
+    public function before(RequestInterface $request, $arguments = null)
+    {
+    	$session = SVC::session();
+    	$userdata = $session->get('data');
+
+    	$redirect_route = $this->redirect[$arguments[0] . '_redirect'];
+
+        if(isset($userdata->user_id)){
+            $u_model = new UserModel();
+
+            $u_detail = $u_model->find($userdata->user_id);
+
+            if($u_detail->public_key !== $userdata->public_key){
+                return redirect()->route('teacher.logout');
+            }
+			return redirect()->route($redirect_route);
+        }
+
+    	if(isset($userdata->fix_role)){
+	    	if($userdata->fix_role != $arguments[0]){
+				return redirect()->route($redirect_route);
+	    	}
+    	}else{
+			return redirect()->route($redirect_route);
+    	}
+    }
+
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    {
+
+    }
+}
