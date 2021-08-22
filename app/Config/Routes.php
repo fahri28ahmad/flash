@@ -19,7 +19,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  */
 $routes->setDefaultNamespace('\HomepageViewCont');
 $routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('about');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //for WEB{
     $routes->get('/', '\HomepageViewCont\Home::index',['as' => 'homepage']);
-    $routes->get('/about', 'HomepageViewCont\Home::about',['as' => 'homepage.about']);
+    $routes->get('/about', '\HomepageViewCont\Home::about',['as' => 'homepage.about']);
     $routes->get('/contact', '\HomepageViewCont\Home::contact',['as' => 'homepage.contact']);
     
     //For Logout{
