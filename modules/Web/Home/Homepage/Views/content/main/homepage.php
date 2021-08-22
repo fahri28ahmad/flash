@@ -80,16 +80,14 @@
           <div class="col-md-7 col-lg-5">
             <div class="about-content" data-aos="fade-left" data-aos-delay="100">
 
-              <h2><span>FlashLab</span>UI Design Mobile </h2>
-              <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+              <h2><span>FlashLab</span> Web </h2>
+              <p>Kami akan melayani anda dengan kecepatan dan kenyamanan Terbaik
               </p>
 
               <ul class="list-unstyled">
-                <li><i class="vi bi-chevron-right"></i>Creative Design</li>
-                <li><i class="vi bi-chevron-right"></i>Retina Ready</li>
-                <li><i class="vi bi-chevron-right"></i>Easy to Use</li>
-                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>
-                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>
+                <li><i class="vi bi-chevron-right"></i>Swab Antigen Home Care</li>
+                <li><i class="vi bi-chevron-right"></i>Swab Antigen Drive Thru</li>
+                <li><i class="vi bi-chevron-right"></i>Home Care Vit Booster</li>
               </ul>
 
             </div>
