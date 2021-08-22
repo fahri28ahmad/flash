@@ -46,46 +46,33 @@ class DefaultAuthViewController extends ViewController{
 
 	public function set_style(){
 		$data_css_st = array(
-			'empty',
+			'assets/assets/vendor/aos/aos.css','assets/assets/vendor/bootstrap-icons/bootstrap-icons.css',
+			'assets/assets/vendor/bootstrap/css/bootstrap.min.css',
+			'assets/assets/vendor/glightbox/css/glightbox.min.css','assets/assets/vendor/swiper/swiper-bundle.min.css'
 		);
 
 		$data_css_nd = array(
-			'empty',
-		);
-
-		$data_css_rd = array(
-			'empty',
+			'assets/assets/css/style.css',"assets/css/theme.css","assets/css/fahri.css"
 		);
 
 		$this->set_css_data($data_css_st,"top","last","");
 		$this->set_css_data($data_css_nd,"top","last","");
-		$this->set_css_data($data_css_rd,"top","last","");
 	}
 
 	public function set_script(){
 
 		$data_js_st = array(
-			'empty'
+			'assets/assets/vendor/aos/aos.js','assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+			'assets/assets/vendor/glightbox/js/glightbox.min.js','assets/assets/vendor/php-email-form/validate.js',
+			'assets/assets/vendor/swiper/swiper-bundle.min.js'
 		);
 
-		$data_js_nd = array(
-			'empty'
+		$data_js_bottom = array(
+			"assets/assets/js/main.js"
 		);
 
-		$data_js_top = array(
-			"empty"
-		);
-
-		$data_js_rd = array(
-			"empty"
-		);
-
-		$this->set_js_data($data_js_top,"top","first","assets/js/");
-		$this->set_js_data($data_js_st,"bottom","last","assets/vendor/");
-
-		$this->set_js_data($data_js_rd,"bottom","last","assets/js/");
-
-		$this->set_js_data("assets/js/theme/home/main.js","bottom","last");
+		$this->set_js_data($data_js_st,"bottom","last","");
+		$this->set_js_data($data_js_bottom,"bottom","last","");
 	}
 
 	// public function set_menu(){
