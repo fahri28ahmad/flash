@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //for WEB{
     $routes->get('/', '\HomepageViewCont\Home::index',['as' => 'homepage']);
-    $routes->get('/about', '\HomepageViewCont\Home::about',['as' => 'homepage.about']);
+    $routes->get('/about', 'HomepageViewCont\Home::about',['as' => 'homepage.about']);
     $routes->get('/contact', '\HomepageViewCont\Home::contact',['as' => 'homepage.contact']);
     
     //For Logout{
