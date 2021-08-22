@@ -33,8 +33,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //for WEB{
-    $routes->post('/', '\HomepageViewCont\Home::index',['as' => 'homepage']);
-
+    $routes->get('/', '\HomepageViewCont\Home::index',['as' => 'homepage']);
+    $routes->get('/about', '\HomepageViewCont\Home::about',['as' => 'homepage.about']);
+    $routes->get('/contact', '\HomepageViewCont\Home::contact',['as' => 'homepage.contact']);
+    
     //For Logout{
         $routes->get('/logout', '\AuthpageFuncCont\FGeneralAuth::logout');
         $routes->get('/admin-panel/logout', '\AuthpageFuncCont\FGeneralAuth::logout',['as'=>'user.logout']);

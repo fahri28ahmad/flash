@@ -1,6 +1,20 @@
 <?php $this->extend('HomeTemplateView\master\master_home') ?>
 
 <?= $this->section('main') ?>
+<section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to FlashLab</h1>
+      <h2>FlashLab, Apps &amp; more...</h2>
+      <img src="assets/assets/img/hero-img1.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <a href="regis.html" class="btn-get-started scrollto">Daftar Sekarang</a>
+      <div class="btns">
+        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+      </div>
+    </div>
+  </section>
+
   <main id="main">
 
     <!-- ======= Get Started Section ======= -->
