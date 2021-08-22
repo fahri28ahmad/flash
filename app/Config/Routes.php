@@ -17,9 +17,9 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * Router Setup
  * --------------------------------------------------------------------
  */
-$routes->setDefaultNamespace('\HomepageViewCont');
+$routes->setDefaultNamespace('\HomepageViewCont\Home');
 $routes->setDefaultController('Home');
-$routes->setDefaultMethod('about');
+$routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
