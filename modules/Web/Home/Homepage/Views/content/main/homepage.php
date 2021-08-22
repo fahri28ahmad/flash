@@ -6,11 +6,9 @@
       <h1>Welcome to FlashLab</h1>
       <h2>FlashLab, Apps &amp; more...</h2>
       <img src="assets/assets/img/hero-img1.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
-      <a href="regis.html" class="btn-get-started scrollto">Daftar Sekarang</a>
+      <a href="<?php echo route_to('user.register.view'); ?>" class="btn-get-started scrollto">Daftar Sekarang</a>
       <div class="btns">
-        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>
-        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>
-        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> whatsapp</a>
       </div>
     </div>
   </section>
@@ -35,7 +33,7 @@
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="feature-block">
 
-              <img src="assets/img/svg/cloud.svg" alt="img">
+              <img src="assets/assets/img/svg/cloud.svg" alt="img">
               <h4>introducing whatsapp</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
@@ -46,7 +44,7 @@
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="feature-block">
 
-              <img src="assets/img/svg/planet.svg" alt="img">
+              <img src="assets/assets/img/svg/planet.svg" alt="img">
               <h4>user friendly interface</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
@@ -57,7 +55,7 @@
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="feature-block">
 
-              <img src="assets/img/svg/asteroid.svg" alt="img">
+              <img src="assets/assets/img/svg/asteroid.svg" alt="img">
               <h4>build the app everyone love</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
@@ -76,7 +74,7 @@
         <div class="row justify-content-center">
 
           <div class="col-md-5 col-lg-3">
-            <img src="assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
           </div>
 
           <div class="col-md-7 col-lg-5">
@@ -145,7 +143,7 @@
             <div class="info">
               <div>
                 <i class="bi bi-geo-alt"></i>
-                <p>jl beringin no 12<br>Palu barat, Sulawesi tengah</p>
+                <p>Jl RA. Kartini - Kompleks SPBU<br>Palu, Sulawesi tengah</p>
               </div>
 
               <div class="email">
@@ -155,7 +153,7 @@
 
               <div>
                 <i class="bi bi-phone"></i>
-                <p>+62 8589 5548 55s</p>
+                <p>0811 4521 177</p>
               </div>
             </div>
 
