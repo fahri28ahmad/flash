@@ -33,6 +33,7 @@ class Autoload extends AutoloadConfig
 		'Home' => ROOTPATH . 'modules/Web/Home',
 		'Master' => ROOTPATH . 'modules/Web/Master',
 		'User' => ROOTPATH . 'modules/Web/User',
+		'FrontEndFahri' => ROOTPATH . 'modules/Web/FrontEndFahri',
 
 		//BP Master{
 		'BusinessProcessRoot/Master/EmailMessage' => ROOTPATH . 'modules/BusinessProcess/Master/EmailMessage',
@@ -107,6 +108,23 @@ class Autoload extends AutoloadConfig
 				'HomeTemplateFuncCont' => ROOTPATH . 'modules/Web/Home/Template/Controllers/FuncCont',
 				'HomeTemplateView' => ROOTPATH . 'modules/Web/Home/Template/Views',
 				'HomeTemplateModel' => ROOTPATH . 'modules/Web/Home/Template/Models',
+
+			//FOR FrontEnd
+			//Home Regular
+			'FrontEndFolder' => ROOTPATH . 'modules/Web/FrontEndFahri/FrontEndPage',
+			'FrontEndTemplateFolder' => ROOTPATH . 'modules/Web/FrontEndFahri/Template',
+
+				//Homepage MVC
+				'FrontEndViewCont' => ROOTPATH . 'modules/Web/FrontEndFahri/FrontEndPage/Controllers/ViewCont',
+				'FrontEndFuncCont' => ROOTPATH . 'modules/Web/FrontEndFahri/FrontEndPage/Controllers/FuncCont',
+				'FrontEndView' => ROOTPATH . 'modules/Web/FrontEndFahri/FrontEndPage/Views',
+				'FrontEndModel' => ROOTPATH . 'modules/Web/FrontEndFahri/FrontEndPage/Models',
+
+				//HomeTemplate MVC
+				'FrontEndTemplateViewCont' => ROOTPATH . 'modules/Web/FrontEndFahri/Template/Controllers/ViewCont',
+				'FrontEndTemplateFuncCont' => ROOTPATH . 'modules/Web/FrontEndFahri/Template/Controllers/FuncCont',
+				'FrontEndTemplateView' => ROOTPATH . 'modules/Web/FrontEndFahri/Template/Views',
+				'FrontEndTemplateModel' => ROOTPATH . 'modules/Web/FrontEndFahri/Template/Models',
 		//}
 	];
 

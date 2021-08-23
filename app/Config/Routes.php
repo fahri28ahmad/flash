@@ -65,6 +65,27 @@ $routes->setAutoRoute(true);
         });
     //}
 //}
+
+//for FRONTEND{
+    //for home{
+        $routes->group('frontendhome', function($routes)
+        {
+            $routes->get('test-halaman-satu', '\FrontEndViewCont\FrontEndHome::test_halaman_satu',['as' => 'front_end.test_halaman_satu.view']);
+        });
+
+        $routes->group('frontendauth', function($routes)
+        {
+        });
+
+        $routes->group('frontenduser', function($routes)
+        {
+        });
+
+        $routes->group('frontendadmin', function($routes)
+        {
+        });
+    //}
+//}
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

@@ -18,7 +18,7 @@
             <h4>Abou Us</h4>
 
             <ul class="list-unstyled">
-              <li><a href="<?php echo route_to('front_end.test_halaman_satu.view');?>">About us</a></li>
+              <li><a href="#">About us</a></li>
               <li><a href="#">Features item</a></li>
               <li><a href="#">Live streaming</a></li>
               <li><a href="#">Privacy Policy</a></li>
