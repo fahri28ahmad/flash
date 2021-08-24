@@ -17,6 +17,47 @@ class FUserAuth extends DefaultAuthFuncController{
 		 $this->request = SVC::request();
 	}
 
+	public function login(){
+		$request = $this->request;
+
+		$accepted_param = array(
+			'user-email',
+			'user-password',
+		);
+
+		$mandatory_validation = array(
+			'user-email','user-password'
+		);
+
+		$additional_validation = array(
+			'user-email' => array("required"),
+			'user-password' => array("required"),
+		);
+
+		$additional_param = array(
+			'ACCEPTED_PARAM' => $accepted_param,
+			'REQUEST_TYPE' => 'post',
+			'ADDITIONAL_VALIDATION' => $additional_validation,
+			'MANDATORY_VALIDATION' => $mandatory_validation
+		);
+
+		$resultVE = $this->BP_login($request,$additional_param);
+
+		if($this->validateError($resultVE)){
+			return redirect()->route("user.login.view")->with('validate_error',$resultVE);
+		}else{
+			$session = SVC::session();
+
+			$data_session = array(
+				'data' =>$resultVE->result
+			);
+
+            $session->set($data_session);
+
+			return redirect()->route('user_panel.panel.index');
+		}
+	}
+
 	public function register(){
 		$request = $this->request;
 
@@ -45,16 +86,20 @@ class FUserAuth extends DefaultAuthFuncController{
 			'MANDATORY_VALIDATION' => $mandatory_validation
 		);
 
-		$result = $this->BP_register($request,$additional_param);
+		$resultVE = $this->BP_register($request,$additional_param);
 
-		if($this->validateError($result)){
-			return redirect()->route("user.register.view")->with('validate_error',$result);
+		if($this->validateError($resultVE)){
+			return redirect()->route("user.register.view")->with('validate_error',$resultVE);
 		}else{
 			$session = SVC::session();
 
-            // $session->set($data_session);
+			$data_session = array(
+				'data' =>$resultVE->result
+			);
 
-			// return redirect()->route('user.panel.dashboard');
+            $session->set($data_session);
+
+			return redirect()->route('user_panel.panel.index');
 		}
 	}
 }

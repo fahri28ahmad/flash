@@ -10,8 +10,8 @@ use Config\Services as SVC;
 class OnlyGuest implements FilterInterface
 {
 	public $redirect = array(
-		'admin_redirect' => "admin.login.view",
-		'user_redirect' => "user.login.view"
+		'admin_redirect' => "admin_panel.panel.index",
+		'user_redirect' => "user_panel.panel.index"
 	);
 
     public function before(RequestInterface $request, $arguments = null)

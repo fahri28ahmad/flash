@@ -15,7 +15,6 @@ class User extends Model
     protected $allowedFields = array('user_id', 'user_username', 'user_password', 'user_name', 'user_email');
 
     protected $beforeInsert = ['hashPassword'];
-    protected $afterFind = ['allowed_action'];
 
 	protected function hashPassword(array $data) {
         if(isset($data['data']['user_password'])){	

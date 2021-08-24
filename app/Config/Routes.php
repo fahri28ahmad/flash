@@ -38,9 +38,9 @@ $routes->setAutoRoute(true);
     $routes->get('/contact', '\HomepageViewCont\Home::contact',['as' => 'homepage.contact']);
     
     //For Logout{
-        $routes->get('/logout', '\AuthpageFuncCont\FGeneralAuth::logout');
-        $routes->get('/admin-panel/logout', '\AuthpageFuncCont\FGeneralAuth::logout',['as'=>'user.logout']);
-        $routes->get('/user-panel/logout', '\AuthpageFuncCont\FGeneralAuth::logout');
+        $routes->get('/logout', '\AuthpageFuncCont\HTTP\FGeneralAuth::logout',['as'=>'logout']);
+        $routes->get('/admin-panel/logout', '\AuthpageFuncCont\HTTP\FGeneralAuth::logout',['as'=>'admin.logout']);
+        $routes->get('/user-panel/logout', '\AuthpageFuncCont\HTTP\FGeneralAuth::logout',['as'=>'user.logout']);
     //}
 
     //for auth{
@@ -55,6 +55,13 @@ $routes->setAutoRoute(true);
 
             $routes->post('/user-login', '\AuthpageFuncCont\HTTP\FUserAuth::login');
             $routes->post('/user-register', '\AuthpageFuncCont\HTTP\FUserAuth::register',);
+        });
+    //}
+
+    //for auth{
+        $routes->group('user-panel',['filter' => 'authfilter:user'], function($routes)
+        {
+            $routes->get('/', '\UserpageViewCont\Panel::index',['as' => 'user_panel.panel.index']);
         });
     //}
 //}

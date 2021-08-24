@@ -15,14 +15,17 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                        <form action="<?php echo route_to('user.login.view'); ?>" method="post">
+                            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" type="email" name="user-email" placeholder="Email">
+                                    <?php echo FHHelperShowFormError($validate_error,"user_email"); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" type="password" name="user-password" placeholder="Password">
+                                    <?php echo FHHelperShowFormError($validate_error,"user_password"); ?>
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
