@@ -52,16 +52,9 @@ $routes->setAutoRoute(true);
 
             $routes->get('/user-login', '\AuthpageViewCont\UserAuth::login',['as' => 'user.login.view']);
             $routes->get('/user-register', '\AuthpageViewCont\UserAuth::register',['as' => 'user.register.view']);
-            $routes->get('/user-register-success', '\AuthpageViewCont\UserAuth::user_register_success',['as' => 'user.register.success']);
-            $routes->get('/user-forgot-password', '\AuthpageViewCont\UserAuth::user_forgot_password',['as' => 'user.forgot.password']);
-            $routes->get('/user-reset-password-success', '\AuthpageViewCont\UserAuth::user_reset_password_success',['as' => 'user.reset.password.success']);
-            $routes->get('/user-reset-password', '\AuthpageViewCont\UserAuth::user_reset_password',['as' => 'user.reset.password']);
-            $routes->get('/user-reset-password-final-success', '\AuthpageViewCont\UserAuth::user_reset_password_final_success',['as' => 'user.reset.password.final.success']);
 
-            $routes->post('/user-login', '\AuthpageFuncCont\FUserAuth::login');
-            $routes->post('/user-register', '\AuthpageFuncCont\FUserAuth::register');
-            $routes->post('/user-forgot-password', '\AuthpageFuncCont\FUserAuth::user_forgot_password');
-            $routes->post('/user-reset-password', '\AuthpageFuncCont\FUserAuth::user_reset_password');
+            $routes->post('/user-login', '\AuthpageFuncCont\HTTP\FUserAuth::login');
+            $routes->post('/user-register', '\AuthpageFuncCont\HTTP\FUserAuth::register',);
         });
     //}
 //}

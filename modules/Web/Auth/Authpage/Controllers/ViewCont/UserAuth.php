@@ -26,32 +26,32 @@ class UserAuth extends DefaultAuthViewController{
 	}
 
 	public function login(){
-		$error = $this->session_handling->getFlashdata('error');
+		$error = $this->session_handling->getFlashdata('validate_error');
 
 		if(!empty($error)){
 			if(isset($error->error_message)){
-				$this->set_data_view("error",$error->error_message);
+				$this->set_data_view("validate_error",$error->error_message);
 			}else{
-				$this->set_data_view("error",array($error));
+				$this->set_data_view("validate_error",array($error));
 			}
 		}else{
-			$this->set_data_view("error",null);
+			$this->set_data_view("validate_error",null);
 		}
 
 		return $this->tc_view("AuthpageView\user\login");
 	}
 
 	public function register(){
-		$error = $this->session_handling->getFlashdata('error');
+		$error = $this->session_handling->getFlashdata('validate_error');
 
 		if(!empty($error)){
 			if(isset($error->error_message)){
-				$this->set_data_view("error",$error->error_message);
+				$this->set_data_view("validate_error",$error->error_message);
 			}else{
-				$this->set_data_view("error",array($error));
+				$this->set_data_view("validate_error",array($error));
 			}
 		}else{
-			$this->set_data_view("error",null);
+			$this->set_data_view("validate_error",null);
 		}
 
 		return $this->tc_view("AuthpageView\user\\register");

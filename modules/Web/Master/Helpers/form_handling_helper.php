@@ -5,7 +5,7 @@ function FHHelperShowFormError($errorFlash, $field){
 	if(isset($errorFlash[$field])){
 	    foreach($errorFlash[$field] as $eu){
 	    if(strlen($eu)>=1){
-	            $string .= '<p class="text-danger">< echo $eu;</p>';
+	            $string .= '<p class="text-danger">' . $eu  . '</p>';
 	    	}
 	    }
 	}
