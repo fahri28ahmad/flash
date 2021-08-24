@@ -52,9 +52,9 @@ class FUserAuth extends DefaultAuthFuncController{
 		}else{
 			$session = SVC::session();
 
-            $session->set($data_session);
+            // $session->set($data_session);
 
-			return redirect()->route('user.panel.dashboard');
+			// return redirect()->route('user.panel.dashboard');
 		}
 	}
 }

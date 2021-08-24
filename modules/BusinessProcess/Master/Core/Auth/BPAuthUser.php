@@ -45,7 +45,7 @@ trait BPAuthUser{
 
 			$user_detail = $user_model->find($user_id);
 
-			$user_detail->
+			// $user_detail->
 
 			return $resultVE;
 		}
