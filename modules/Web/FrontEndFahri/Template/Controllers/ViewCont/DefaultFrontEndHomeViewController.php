@@ -46,9 +46,10 @@ class DefaultFrontEndHomeViewController extends ViewController{
 
 	public function set_style(){
 		$data_css_st = array(
-			'assets/assets/vendor/aos/aos.css','assets/assets/vendor/bootstrap-icons/bootstrap-icons.css',
+			'assets/assets/vendor/aos/aos.css',
+			'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css',
 			'assets/assets/vendor/bootstrap/css/bootstrap.min.css',
-			'assets/assets/vendor/glightbox/css/glightbox.min.css','assets/assets/vendor/swiper/swiper-bundle.min.css'
+			'assets/assets/vendor/glightbox/css/glightbox.min.css','assets/assets/vendor/swiper/swiper-bundle.min.css',
 		);
 
 		$data_css_nd = array(
@@ -62,9 +63,11 @@ class DefaultFrontEndHomeViewController extends ViewController{
 	public function set_script(){
 
 		$data_js_st = array(
-			'assets/assets/vendor/aos/aos.js','assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+			'assets/assets/vendor/aos/aos.js',
+			'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
 			'assets/assets/vendor/glightbox/js/glightbox.min.js','assets/assets/vendor/php-email-form/validate.js',
 			'assets/assets/vendor/swiper/swiper-bundle.min.js'
+			
 		);
 
 		$data_js_bottom = array(

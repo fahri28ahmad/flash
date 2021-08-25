@@ -61,7 +61,7 @@ $routes->setAutoRoute(true);
     //for auth{
         $routes->group('user-panel',['filter' => 'authfilter:user'], function($routes)
         {
-            $routes->get('/', '\UserpageViewCont\Panel::index',['as' => 'user_panel.panel.index']);
+            $routes->get('/', '\FrontEndViewCont\FrontEndUser::index',['as' => 'user_panel.panel.index']);
         });
     //}
 //}
