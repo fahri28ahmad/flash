@@ -71,13 +71,13 @@ class DefaultFrontEndUserViewController extends ViewController{
 	public function set_script(){
 
 		$data_js_st = array(
-			'assets/assets/vendora/aos/aos.js',
-			'assets/assets/vendora/bootstrap/js/bootstrap.bundle.min.js',
-			'assets/assets/vendora/glightbox/js/glightbox.min.js','assets/assets/vendor/php-email-form/validate.js',
-			'assets/assets/vendora/swiper/swiper-bundle.min.js',
+			'assets/assets/vendor/aos/aos.js',
+			'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+			'assets/assets/vendor/glightbox/js/glightbox.min.js','assets/assets/vendor/php-email-form/validate.js',
+			'assets/assets/vendor/swiper/swiper-bundle.min.js',
 			'assets/assets/vendora/jquery-3.2.1.min.js',
-			'assets/assets/vendora/bootstrap/popper.min.js',
-			'assets/assets/vendora/bootstrap/bootstrap.min.js',
+			'assets/assets/vendora/bootstrap-4.1/popper.min.js',
+			'assets/assets/vendora/bootstrap-4.1/bootstrap.min.js',
 			'assets/assets/vendora/slick/slick.min.js',
 			'assets/assets/vendora/wow/wow.min.js',
 			'assets/assets/vendora/animsition/animsition.min.js',
