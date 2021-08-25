@@ -57,7 +57,7 @@ class DefaultFrontEndUserViewController extends ViewController{
 			'assets/assets/vendora/slick/slick.css',
 			'assets/assets/vendora/select2/select2.min.css',
 			'assets/assets/vendora/perfect-scrollbar/perfect-scrollbar.css',
-			'assets/assets/vendora/css/theme.css',
+			'assets/css/theme.css',
 		);
 
 		$data_css_nd = array(
