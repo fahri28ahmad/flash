@@ -46,7 +46,7 @@ class DefaultFrontEndUserViewController extends ViewController{
 
 	public function set_style(){
 		$data_css_st = array(
-			'assets/assets/vendora/css/font-face.css',
+			'assets/css/font-face.css',
 			'assets/assets/vendora/font-awesome-4.7/css/font-awesome.min.css',
 			'assets/assets/vendora/font-awesome-5/css/fontawesome-all.min.css',
 			'assets/assets/vendora/mdi-font/css/material-design-iconic-font.min.css',

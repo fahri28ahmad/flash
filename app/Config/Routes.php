@@ -79,6 +79,7 @@ $routes->setAutoRoute(true);
 
         $routes->group('frontenduser', function($routes)
         {
+            $routes->get('/', '\FrontEndViewCont\FrontEndUser::index',['as' => 'frontenduser.frontenduser.index']);
         });
 
         $routes->group('frontendadmin', function($routes)
