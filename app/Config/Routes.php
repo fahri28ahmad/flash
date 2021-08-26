@@ -62,6 +62,10 @@ $routes->setAutoRoute(true);
         $routes->group('user-panel',['filter' => 'authfilter:user'], function($routes)
         {
             $routes->get('/', '\UserpageViewCont\Panel::index',['as' => 'user_panel.panel.index']);
+
+            $routes->group('swab',['filter' => 'authfilter:user'], function($routes){
+                $routes->post('register', '\UserpageFuncCont\HTTP\Swab::register_self',['as' => 'user_panel.swab.swab.register-self']);
+            });
         });
     //}
 //}

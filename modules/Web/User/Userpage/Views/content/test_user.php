@@ -14,11 +14,8 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="panel7" role="tabpanel" aria-labelledby="home-tab">
-                        <form class="modal-body mb-1" action="" method="post">
-                            <div class="form-group">
-                                <label>Nama</label>
-                                <input class="au-input au-input--full" type="text" name="nama" placeholder="Nama Lengkap" />
-                            </div>
+                        <form class="modal-body mb-1" action="<?php echo route_to('user_panel.swab.swab.register-self');?>" method="post">
+                            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
                             <div class="form-group">
                                 <label>Pilih Paket</label><br />
                                 <div class="container">
@@ -51,6 +48,7 @@
                     </div>
                     <div class="tab-pane fade" id="panel8" role="tabpanel" aria-labelledby="profile-tab">
                         <form action="" method="post">
+                            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
                             <div class="form-group">
                                 <label>No Ktp</label>
                                 <input class="au-input au-input--full" type="text" onkeypress="return event.charCode >= 48 && event.charCode <=57" name="ktp" placeholder="No KTP" />
