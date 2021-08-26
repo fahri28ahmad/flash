@@ -6,16 +6,20 @@
             <div class="modal-content">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i> Perbaharui data</a>
+                            <a class="nav-link" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i> Perbaharui data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i> Daftar Baru</a>
+                            <a class="nav-link active" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i> Daftar Baru</a>
                         </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="panel7" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane fade" id="panel7" role="tabpanel" aria-labelledby="home-tab">
                         <form class="modal-body mb-1" action="<?php echo route_to('user_panel.swab.swab.register-self');?>" method="post">
                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input class="au-input au-input--full" type="text" name="nama" placeholder="Nama Lengkap" />
+                            </div>
                             <div class="form-group">
                                 <label>Pilih Paket</label><br />
                                 <div class="container">
@@ -46,8 +50,8 @@
                             <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="panel8" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="" method="post">
+                    <div class="tab-pane fade show active" id="panel8" role="tabpanel" aria-labelledby="profile-tab">
+                        <form class="modal-body mb-1" action="" method="post">
                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
                             <div class="form-group">
                                 <label>No Ktp</label>
@@ -81,25 +85,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Pilih Paket</label>
+                                <label>Pilih Paket</label><br />
                                 <div class="container">
                                     <div class="form-check-inline form-check">
                                         <div class="row">
                                             <div class="col-sm-9">
-                                                <label for="inline-radio1" class="form-check-label">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input" />
+                                                <label for="inline-radio4" class="form-check-label">
+                                                    <input type="radio" id="inline-radio4" name="inline-radios" value="option1" class="form-check-input" />
                                                     <img src="assets/images/Flashlabdt.png" alt="CoolAdmin" />
                                                 </label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <label for="inline-radio2" class="form-check-label">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input" />
+                                                <label for="inline-radio5" class="form-check-label">
+                                                    <input type="radio" id="inline-radio5" name="inline-radios" value="option2" class="form-check-input" />
                                                     <img src="assets/images/Flashlabhc.png" alt="CoolAdmin" />
                                                 </label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <label for="inline-radio3" class="form-check-label">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input" />
+                                                <label for="inline-radio6" class="form-check-label">
+                                                    <input type="radio" id="inline-radio6" name="inline-radios" value="option3" class="form-check-input" />
                                                     <img src="assets/images/Flashlabvit.png" alt="CoolAdmin" />
                                                 </label>
                                             </div>
@@ -153,9 +157,9 @@
                                             <td class="text-right">Denpasar 28/11-1997</td>
                                             <td class="text-right">082189705433</td>
                                             <td class="text-right mx-auto">
-                                                <a href="#" class="badge badge-success">Edit</a><br />
-                                                <a href="#" class="badge badge-danger">Hapus</a><br />
-                                                <a href="#" class="badge badge-secondary">Print</a>
+                                                <a href="#" class="badge  badge-success">Edit</a><br />
+                                                <a href="#" class="badge  badge-danger">Hapus</a><br />
+                                                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>" class="badge  badge-secondary">Print</a>
                                             </td>
                                         </tr>
                                         <tr>

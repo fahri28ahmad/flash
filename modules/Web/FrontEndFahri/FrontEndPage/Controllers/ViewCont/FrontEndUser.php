@@ -15,8 +15,22 @@ class FrontEndUser extends DefaultFrontEndUserViewController{
 		return $this->tc_view("FrontEndView\content\User\\test_user");
 	}
 
-	public function print_r()
+	public function pdf()
 	{
-		echo "Print asur";
+		$data_css = array(
+			'assets/pdf/style.css',
+		);
+
+		$this->set_css_data($data_css,"top","last","");
+		return $this->tc_view("FrontEndView\content\User\\hasil");
+	}
+	public function invoice()
+	{
+		$data_css = array(
+			'assets/pdf/style1.css',
+		);
+
+		$this->set_css_data($data_css,"top","last","");
+		return $this->tc_view("FrontEndView\content\User\\invoice");
 	}
 }

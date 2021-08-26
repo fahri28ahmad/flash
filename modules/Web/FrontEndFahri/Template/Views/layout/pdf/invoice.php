@@ -33,7 +33,7 @@
           <div class="date">Metode Pembayaran	Transfer Bank / Cash</div>
         </div>
       </div>
-      <table border="1" cellspacing="0" cellpadding="0">
+      <table border="0" cellspacing="0" cellpadding="0">
         <thead>
           <tr>
             <th class="no">#</th>
@@ -69,21 +69,17 @@
         <tfoot>
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">TTD</td>
-            <td></td>
+            <td colspan="2">Subtotal</td>
+            <td>-</td>
           </tr>
           <tr>
             <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td><img src="flashlab.png"></td>
-          </tr>
-          <tr>
-            <td colspan="2"></td>
-            <td colspan="2">LinkL</td>
-            <td>----</td>
+            <td colspan="2">Total</td>
+            <td>IDR 195.000</td>
           </tr>
         </tfoot>
       </table>
+      <div id="thanks">Thank you!</div>
       <div id="notices">
         <div>NOTICE:</div>
         <div class="notice">Silahkan melakukan pembayaran ke :</div>
@@ -93,7 +89,7 @@
       </div>
     </main>
     <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
+      Terima kasih telah menggunakan layanan Kami, apabila ada kendala silahkan menghubungi kami melalui Whatsapp 0811-452-1177.
     </footer>
   </body>
 </html>

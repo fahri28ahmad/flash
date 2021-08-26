@@ -9,7 +9,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <button type="button" class="btn btn-primary">Yakin</button>
+                <a href="<?php echo route_to('logout');?>"><button type="button" class="btn btn-primary">Yakin</button></a>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="#" class="js-arrow" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <a href="" class="js-arrow" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         <i class="fas fa-sign-out-alt"></i>Logout</a>
                 </li>
 
