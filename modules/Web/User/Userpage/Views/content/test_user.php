@@ -1,4 +1,4 @@
-<?php $this->extend('FrontEndTemplateView\master\master_user_final') ?>
+<?php $this->extend('UserTemplateView\master\master_user_final') ?>
 
 <?= $this->section('main_modal') ?>
     <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -4,15 +4,15 @@
 
 namespace UserpageViewCont;
 
-use AuthTemplateViewCont\DefaultAuthViewController;
+use UserTemplateViewCont\DefaultUserViewController;
 use Config\Services as SVC;
 
-class Panel extends DefaultAuthViewController{
+class Panel extends DefaultUserViewController{
 	public function __construct(){
 		parent::__construct();
 	}
 
 	public function index(){
-		echo "Apaan sih";
+		return $this->tc_view("UserpageView\content\\test_user");
 	}
 }

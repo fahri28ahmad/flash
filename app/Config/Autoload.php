@@ -58,9 +58,9 @@ class Autoload extends AutoloadConfig
 				'AdminTemplateModel' => ROOTPATH . 'modules/Web/Admin/Template/Models',
 
 			//FOR User
-			//Student Regular
-			'UserpageFolder' => ROOTPATH . 'modules/Web/Student/Adminpage',
-			'UserTemplateFolder' => ROOTPATH . 'modules/Web/Student/Template',
+			//User Regular
+			'UserpageFolder' => ROOTPATH . 'modules/Web/User/Adminpage',
+			'UserTemplateFolder' => ROOTPATH . 'modules/Web/User/Template',
 
 				//Homepage MVC
 				'UserpageViewCont' => ROOTPATH . 'modules/Web/User/Userpage/Controllers/ViewCont',
