@@ -85,6 +85,8 @@ $routes->setAutoRoute(true);
         {
             $routes->get('/', '\FrontEndViewCont\FrontEndUser::index',['as' => 'frontenduser.frontenduser.index']);
             $routes->get('pdf', '\FrontEndViewCont\FrontEndUser::pdf',['as' => 'frontenduser.frontenduser.print']);
+            $routes->get('invoice', '\FrontEndViewCont\FrontEndUser::invoice',['as' => 'frontenduser.frontenduser.invoice']);
+            $routes->get('admin', '\FrontEndViewCont\FrontEndUser::admin',['as' => 'frontenduser.frontenduser.admin']);
         });
 
         $routes->group('frontendadmin', function($routes)

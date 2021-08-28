@@ -9,12 +9,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <a href="<?php echo route_to('logout');?>"><button type="button" class="btn btn-primary">Yakin</button></a>
+                <button type="button" class="btn btn-primary">Yakin</button>
             </div>
         </div>
     </div>
 </div>
-
 
 <header class="header-mobile d-block d-lg-none">
     <div class="header-mobile__bar">
@@ -39,7 +38,7 @@
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="" class="js-arrow" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <a href="#" class="js-arrow" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         <i class="fas fa-sign-out-alt"></i>Logout</a>
                 </li>
 
