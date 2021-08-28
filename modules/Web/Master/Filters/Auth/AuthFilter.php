@@ -22,17 +22,6 @@ class AuthFilter implements FilterInterface
 
     	$redirect_route = $this->redirect[$arguments[0] . '_redirect'];
 
-        if(isset($userdata->user_id)){
-            $u_model = new UserModel();
-
-            $u_detail = $u_model->find($userdata->user_id);
-
-            if($u_detail->public_key !== $userdata->public_key){
-                return redirect()->route('teacher.logout');
-            }
-			return redirect()->route($redirect_route);
-        }
-
     	if(isset($userdata->fix_role)){
 	    	if($userdata->fix_role != $arguments[0]){
 				return redirect()->route($redirect_route);

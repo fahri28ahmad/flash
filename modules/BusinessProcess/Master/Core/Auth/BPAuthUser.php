@@ -45,6 +45,7 @@ trait BPAuthUser{
 	            if(password_verify($resultVE->result->user_password, $pass)){
 					$us = new UserSession();
 
+					$us->user_id = $user_ent[0]->user_id;
 					$us->user_name = $user_ent[0]->user_name;
 					$us->user_email = $user_ent[0]->user_email;
 		        	$resultVE->result = $us;

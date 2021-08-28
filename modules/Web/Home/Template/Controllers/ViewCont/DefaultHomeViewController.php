@@ -31,6 +31,7 @@ class DefaultHomeViewController extends ViewController{
 		// $this->set_menu();
 		$this->set_language();
 		// $this->set_locale();
+		$this->set_session();
 	}
 
 	public function set_session(){
