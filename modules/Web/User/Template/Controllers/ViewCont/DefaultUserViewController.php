@@ -83,6 +83,7 @@ class DefaultUserViewController extends ViewController{
 			'assets/assets/vendora/select2/select2.min.js',
 			'assets/assets/js/main.js',
 			'assets/assets/js/bootstrap.js',
+			'assets/custom/js/page/user/swab.js'
 			
 		);
 
@@ -90,6 +91,11 @@ class DefaultUserViewController extends ViewController{
 			"assets/assets/js/main.js"
 		);
 
+		$data_js_top = array(
+			"assets/custom/js/routes.js"
+		);
+
+		$this->set_js_data($data_js_top,"top","first","");
 		$this->set_js_data($data_js_st,"bottom","last","");
 		$this->set_js_data($data_js_bottom,"bottom","last","");
 	}

@@ -16,7 +16,7 @@
  * @package Cpdf
  */
 
-namespace Dompdflib;
+namespace Dompdf;
 
 use FontLib\Exception\FontNotFoundException;
 use FontLib\Font;

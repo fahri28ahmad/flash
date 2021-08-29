@@ -90,8 +90,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalprintLabel">Pilih Cetakan</h5><br>
-                <a href="<?php echo route_to('frontenduser.frontenduser.invoice');?>"><button type="button" class="btn btn-primary">Invoice</button></a>
-                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
+                <a class="invoice-btn" href="#"><button type="button" class="btn btn-primary">Invoice</button></a>
+                <a class="swab-btn" href="#"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -137,19 +137,32 @@
                                         <?php foreach($patient_package as $m){ ?>
                                         <tr>
                                             <td>2018-09-29 05:57</td>
-                                            <td><?php echo $m->package_id; ?></td>
+                                            <td>swab-<?php echo $m->patient_package_id; ?></td>
                                             <td><?php echo $m->get_patient_detail()[0]->complete_name; ?></td>
                                             <td class="text-right"><?php echo $m->get_date_inserted(); ?></td>
                                             <td class="text-right">082189705433</td>
                                             <td class="text-right mx-auto">
                                                 <a href="#" class="badge  badge-success" >Edit</a><br />
                                                 <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
-                                                <a href="#" class="badge  badge-secondary" data-toggle="modal" data-target="#Modalprint">Print</a>
+                                                <a href="#" class="badge print-swab badge-secondary" data-toggle="modal" data-target="#Modalprint" data-id="<?php echo $m->patient_package_id;?>">Print</a>
                                             </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pagination-wrapper">
+                                <nav class="Page navigation class-list-pagination pager-custom">
+                                        <?php
+                                        if(isset($pager)){
+                                            $pager->renderPager(); 
+                                        }
+                                        ?>
+                                </nav>
                             </div>
                         </div>
                     </div>

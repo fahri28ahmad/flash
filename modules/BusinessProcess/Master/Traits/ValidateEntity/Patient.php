@@ -342,7 +342,7 @@ trait Patient{
 								'page'
 							);
 
-							$cv_entities->page = $v;
+							$a_entities->page = $v;
 
 							$rules['page'] = $ar;
 						}
