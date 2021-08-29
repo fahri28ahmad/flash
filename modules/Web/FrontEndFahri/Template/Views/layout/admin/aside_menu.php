@@ -1,10 +1,10 @@
 <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
+    <div class="logo" style="background-color: #84ffaf;">
         <a href="#">
-            <img src="assets/images/icon/logo1.png" alt="Cool Admin" />
+            <img src="assets/images/icon/logo1.png" alt="Cool Admin"/>
         </a>
     </div>
-    <div class="menu-sidebar__content js-scrollbar1">
+    <div class="menu-sidebar__content js-scrollbar1" style="background-color: #84ffaf;">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
