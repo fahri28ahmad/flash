@@ -188,7 +188,7 @@
     <header class="clearfix">
     <div class="logo">
     </div>
-      <h1>HASIL PEMERIKSAAN LABOLATORIUM<BR><HR>LABORATORY TEST RESULT</h1>
+      <h1>HASIL PEMERIKSAAN LABOLATORIUM<BR></h1>
       <div id="project" class="clearfix">
         <div><span>No. Reg</span> 0043</div>
         <div><span>Nama</span><?php echo $patient_data[0]->get_patient_detail()[0]->complete_name;?></div>

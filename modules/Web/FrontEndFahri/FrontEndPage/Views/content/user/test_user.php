@@ -159,6 +159,20 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pagination-wrapper">
+                                <nav class="Page navigation class-list-pagination pager-custom">
+                                    <a class="page_item" href="#" meta-page="6">Previous</a><a class="page_item" href="#" meta-page="1">1</a><span class="ellipsis"> . . . </span>
+                                    <a class="page_item" href="#" meta-page="4">4</a><a class="page_item" href="#" meta-page="5">5</a>
+                                    <a class="page_item" href="#" meta-page="6">6</a><a>7</a><a class="page_item" href="#" meta-page="8">8</a>
+                                    <a class="page_item" href="#" meta-page="9">9</a><a class="page_item" href="#" meta-page="10">10</a><span class="ellipsis"> . . . </span>
+                                    <a class="page_item" href="#" meta-page="13">13</a><a class="page_item" href="#" meta-page="8">Next</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
                                 <p>Copyright © 2021 Tehcno_Celebes. All rights reserved. Template by <a href="https://techno-celebes.com/">Tehcno_Celebes</a>.</p>

@@ -11,7 +11,7 @@
                     <a class="js-arrow" href="#"> <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li class="has-sub">
-                    <a class="js-arrow" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-sign-out-alt"></i>Logout</a>
+                    <a class="js-arrow" href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-sign-out-alt"></i>Logout</a>
                 </li>
             </ul>
         </nav>

@@ -14,10 +14,6 @@ class FrontEndUser extends DefaultFrontEndUserViewController{
 	{
 		return $this->tc_view("FrontEndView\content\User\\test_user");
 	}
-	public function admin()
-	{
-		return $this->tc_view("FrontEndView\content\Admin\\admin");
-	}
 
 	public function pdf()
 	{

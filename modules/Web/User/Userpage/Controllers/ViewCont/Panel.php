@@ -25,6 +25,7 @@ class Panel extends DefaultUserViewController{
 		);
 
 		$additional_param = array(
+			'user_inputter' => $this->session->user_id,
 			'limit' => array(
 				'total' => 12,
 				'start' => 0

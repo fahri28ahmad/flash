@@ -134,20 +134,58 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($patient_package as $m){ ?>
                                         <tr>
                                             <td>2018-09-29 05:57</td>
-                                            <td><?php echo $m->package_id; ?></td>
-                                            <td><?php echo $m->get_patient_detail()[0]->complete_name; ?></td>
-                                            <td class="text-right"><?php echo $m->get_date_inserted(); ?></td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
                                             <td class="text-right">082189705433</td>
                                             <td class="text-right mx-auto">
-                                                <a href="#" class="badge  badge-success" >Edit</a><br />
-                                                <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
-                                                <a href="#" class="badge  badge-secondary" data-toggle="modal" data-target="#Modalprint">Print</a>
+                                                <a href="#" class="badge  badge-success">Edit</a><br />
+                                                <a href="#" class="badge  badge-danger">Hapus</a><br />
+                                                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>" class="badge  badge-secondary">Print</a>
                                             </td>
                                         </tr>
-                                        <?php } ?>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
+                                            <td class="text-right">082189705433</td>
+                                            <td class="text-right">edit hapus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
+                                            <td class="text-right">082189705433</td>
+                                            <td class="text-right">edit hapus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
+                                            <td class="text-right">082189705433</td>
+                                            <td class="text-right">edit hapus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
+                                            <td class="text-right">082189705433</td>
+                                            <td class="text-right">edit hapus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td>Fahri</td>
+                                            <td class="text-right">Denpasar 28/11-1997</td>
+                                            <td class="text-right">082189705433</td>
+                                            <td class="text-right">edit hapus</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

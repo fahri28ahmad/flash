@@ -14,7 +14,6 @@ class Home extends DefaultHomeViewController{
 
 	public function index()
 	{
-		print_r($this->session);
 		$data_css_nd = array(
 			'fahri.css',
 			'font-face.css'

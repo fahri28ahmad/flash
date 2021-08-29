@@ -94,7 +94,7 @@ $routes->setAutoRoute(true);
 
         $routes->group('frontendadmin', function($routes)
         {
-            $routes->get('admin', '\FrontEndViewCont\FrontEndAdmin::panel',['as' => 'frontendadmin.frontendadmin.admin']);
+            $routes->get('/', '\FrontEndViewCont\FrontEndAdmin::index',['as' => 'frontendadmin.frontendadmin.admin']);
         });
     //}
 //}
