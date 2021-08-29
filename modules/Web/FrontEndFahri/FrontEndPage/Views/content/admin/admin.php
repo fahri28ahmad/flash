@@ -1,4 +1,4 @@
-<?php $this->extend('UserTemplateView\master\master_user_final') ?>
+<?php $this->extend('FrontEndTemplateView\master\master_admin_final') ?>
 
 <?= $this->section('main_modal') ?>
 <div class="modal fade bd-example-modal-lg" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -134,20 +134,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($patient_package as $m){ ?>
-                                        <tr>
-                                            <td>2018-09-29 05:57</td>
-                                            <td><?php echo $m->package_id; ?></td>
-                                            <td><?php echo $m->get_patient_detail()[0]->complete_name; ?></td>
-                                            <td class="text-right"><?php echo $m->get_date_inserted(); ?></td>
-                                            <td class="text-right">082189705433</td>
-                                            <td class="text-right mx-auto">
-                                                <a href="#" class="badge  badge-success" >Edit</a><br />
-                                                <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
-                                                <a href="#" class="badge  badge-secondary" data-toggle="modal" data-target="#Modalprint">Print</a>
-                                            </td>
-                                        </tr>
-                                        <?php } ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>
