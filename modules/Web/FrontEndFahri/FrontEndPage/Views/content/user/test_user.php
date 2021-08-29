@@ -171,6 +171,10 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> daee17716a77fd83310cbc5f9660faabe28fd7d2
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">

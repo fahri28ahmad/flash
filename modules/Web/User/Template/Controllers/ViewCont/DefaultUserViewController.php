@@ -14,6 +14,7 @@ class DefaultUserViewController extends ViewController{
 	public $security;
 
 	public $session_handling;
+	public $session;
 
 	public function __construct(){
 		parent::__construct();
@@ -29,6 +30,7 @@ class DefaultUserViewController extends ViewController{
 		$this->set_style();
 		$this->set_script();
 		$this->set_language();
+		$this->set_session();
 	}
 
 	public function set_session(){
