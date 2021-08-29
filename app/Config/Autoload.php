@@ -20,7 +20,10 @@ class Autoload extends AutoloadConfig
 	public $psr4 = [
 		APP_NAMESPACE => APPPATH, // For custom app namespace
 		'Config'      => APPPATH . 'Config',
-
+		'Dompdf'      => ROOTPATH . 'vendor/dompdf/dompdf/src',
+		'Dompdflib'      => ROOTPATH . 'vendor/dompdf/dompdf/lib',
+		'Endroid/QrCode'      => ROOTPATH . 'vendor/endroid/qr-code/assets/src',
+		
 		'WebRoot' => ROOTPATH . 'modules/Web',
 		'ApiRoot' => ROOTPATH . 'modules/Api',
 		'CronJobRoot' => ROOTPATH . 'modules/CronJobs',

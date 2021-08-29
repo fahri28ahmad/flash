@@ -18,10 +18,13 @@ class PatientPackage extends Model
         $db = \Config\Database::connect();
 
         $builder = $db->table('patient_package u');
-        $builderClone = $builder;
+        $builder->join('patients pt', 'pt.patient_id = u.patient_id');
 
         if(isset($patient_package->patient_package_id)){
             $builder->where("u.patient_package_id =",$patient_package->patient_package_id);
+        }
+        if(isset($patient_package->user_inputter)){
+            $builder->where("pt.user_inputter =",$patient_package->user_inputter);
         }
 
         return $builder;
@@ -44,6 +47,8 @@ class PatientPackage extends Model
 
         if(isset($patient_package->order_by)){
             $builder->orderBy($patient_package->order_by[0], $patient_package->order_by[1]);
+        }else{
+            $builder->orderBy("patient_package_id", "DESC");
         }
         $query = $builder->get()->getResult("BusinessProcessRoot\Master\Entities\PatientPackage");
 

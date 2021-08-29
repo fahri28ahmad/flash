@@ -64,7 +64,11 @@ $routes->setAutoRoute(true);
             $routes->get('/', '\UserpageViewCont\Panel::index',['as' => 'user_panel.panel.index']);
 
             $routes->group('swab',['filter' => 'authfilter:user'], function($routes){
-                $routes->post('register', '\UserpageFuncCont\HTTP\Swab::register_swab',['as' => 'user_panel.swab.swab.register']);
+                $routes->group('web', function($routes){
+                    $routes->post('register', '\UserpageFuncCont\HTTP\Swab::register_swab',['as' => 'user_panel.swab.swab.register']);
+
+                    $routes->get('print-pdf/(:any)', '\UserpageFuncCont\HTTP\Swab::print_swab/$1',['as' => 'user_panel.swab.swab.print_swab']);
+                });
             });
         });
     //}
@@ -86,11 +90,11 @@ $routes->setAutoRoute(true);
             $routes->get('/', '\FrontEndViewCont\FrontEndUser::index',['as' => 'frontenduser.frontenduser.index']);
             $routes->get('pdf', '\FrontEndViewCont\FrontEndUser::pdf',['as' => 'frontenduser.frontenduser.print']);
             $routes->get('invoice', '\FrontEndViewCont\FrontEndUser::invoice',['as' => 'frontenduser.frontenduser.invoice']);
-            $routes->get('admin', '\FrontEndViewCont\FrontEndUser::admin',['as' => 'frontenduser.frontenduser.admin']);
         });
 
         $routes->group('frontendadmin', function($routes)
         {
+            $routes->get('admin', '\FrontEndViewCont\FrontEndAdmin::panel',['as' => 'frontendadmin.frontendadmin.admin']);
         });
     //}
 //}

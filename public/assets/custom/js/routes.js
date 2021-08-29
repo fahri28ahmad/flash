@@ -1,0 +1,1 @@
+var PRINT_PDF = "user-panel/swab/web/print-pdf";
