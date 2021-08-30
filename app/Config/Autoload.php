@@ -22,7 +22,8 @@ class Autoload extends AutoloadConfig
 		'Config'      => APPPATH . 'Config',
 		'Dompdf'      => ROOTPATH . 'vendor/dompdf/dompdf/src',
 		'Dompdflib'      => ROOTPATH . 'vendor/dompdf/dompdf/lib',
-		'Endroid/QrCode'      => ROOTPATH . 'vendor/endroid/qr-code/assets/src',
+		'Endroid\QrCode'      => ROOTPATH . 'vendor/endroid/qr-code/src',
+		'BaconQrCode'      => ROOTPATH . 'vendor/bacon/bacon-qr-code/src',
 		
 		'WebRoot' => ROOTPATH . 'modules/Web',
 		'ApiRoot' => ROOTPATH . 'modules/Api',
