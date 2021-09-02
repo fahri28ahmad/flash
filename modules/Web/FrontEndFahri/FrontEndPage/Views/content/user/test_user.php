@@ -121,38 +121,6 @@
                                             <td class="text-right">082189705433</td>
                                             <td class="text-right">edit hapus</td>
                                         </tr>
-                                        <tr>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>001</td>
-                                            <td>Fahri</td>
-                                            <td class="text-right">Denpasar 28/11-1997</td>
-                                            <td class="text-right">082189705433</td>
-                                            <td class="text-right">edit hapus</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>001</td>
-                                            <td>Fahri</td>
-                                            <td class="text-right">Denpasar 28/11-1997</td>
-                                            <td class="text-right">082189705433</td>
-                                            <td class="text-right">edit hapus</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>001</td>
-                                            <td>Fahri</td>
-                                            <td class="text-right">Denpasar 28/11-1997</td>
-                                            <td class="text-right">082189705433</td>
-                                            <td class="text-right">edit hapus</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>001</td>
-                                            <td>Fahri</td>
-                                            <td class="text-right">Denpasar 28/11-1997</td>
-                                            <td class="text-right">082189705433</td>
-                                            <td class="text-right">edit hapus</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

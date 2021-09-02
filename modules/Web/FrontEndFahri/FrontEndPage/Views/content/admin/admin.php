@@ -1,6 +1,7 @@
 <?php $this->extend('FrontEndTemplateView\master\master_admin_final') ?>
 
 <?= $this->section('main_modal') ?>
+<!-- tambah data  -->
 <div class="modal fade bd-example-modal-lg" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -69,6 +70,49 @@
     </div>
   </div>
 </div>
+<!-- verifikasi modal -->
+<div class="modal fade bd-example-modal-lg" id="modalverifikasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form class="modal-body mb-1" action="" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <div class="form-group">
+                <label>No Ktp</label><h4>72192003182398213</h4>
+            </div>
+            <div class="form-group">
+                <label>Nama</label><h4>namanya</h4>
+            </div>
+            <div class="form-group">
+                <label>Alamat</label><h4>jl beringain no 12 palu</h4>
+            </div>
+            <div class="form-group">
+                <label>No Telpon</label><h4>082188192892</h4>
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label><h4>tanggallahirnya</h4>
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label><h4>jenis kelaminnya</h4>
+            </div>
+            <div class="form-group">
+                <label>Hasil swab</label><br />
+                <div class="form-check">
+                    <div class="radio">
+                        <label for="radio1" class="form-check-label"> <input type="radio" id="radio1" name="verifikasi" value="1" class="form-check-input" />Positif</label>
+                    </div>
+                    <div class="radio">
+                        <label for="radio2" class="form-check-label"> <input type="radio" id="radio2" name="verifikasi" value="2" class="form-check-input" />Negatif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Paket</label><h4>paketnya</h4>
+            </div>
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
+        </form>
+    </div>
+  </div>
+</div>
 <div class="modal fade" id="Modalhapus" tabindex="-1" role="dialog" aria-labelledby="ModalhapusLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -119,6 +163,52 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="title-1 m-b-25">Earnings By Items</h2>
+                            <input class="form-control mb-4" id="tableSearch" type="text" placeholder="Cari">
+                            <div class="table-responsive table--no-card m-b-40">
+                                <table class="table table-borderless table-striped table-earning">
+                                    <thead> 
+                                        <tr>
+                                            <th class="text-center">aksi</th>
+                                            <th class="text-center">name</th>
+                                            <th class="text-center">date</th>
+                                            <th class="text-center">noID</th>
+                                            <th class="text-center">TTL</th>
+                                            <th class="text-center">no tlp</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center mx-auto"> 
+                                                <a href="#" class="badge  badge-primary" data-toggle="modal" data-target="#modalverifikasi">Verifikasi</a><br />
+                                                <a href="#" class="badge  badge-success">Edit</a><br />
+                                                <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
+                                                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>" class="badge  badge-secondary">Print</a>
+                                            </td>
+                                            <td>Fahri</td>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>001</td>
+                                            <td class="text-center">Denpasar 28/11-1997</td>
+                                            <td class="text-left ">082189705433</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pagination-wrapper">
+                                <nav class="Page navigation class-list-pagination pager-custom">
+                                        <?php
+                                        if(isset($pager)){
+                                            $pager->renderPager(); 
+                                        }
+                                        ?>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
