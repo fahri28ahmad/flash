@@ -90,13 +90,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalprintLabel">Pilih Cetakan</h5><br>
-                <a class="invoice-btn" href="#"><button type="button" class="btn btn-primary">Invoice</button></a>
-                <a class="swab-btn" href="#"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-footer">
+                <a class="invoice-btn" href="#"><button type="button" class="btn btn-primary">Invoice</button></a>
+                <a class="swab-btn" href="#"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
             </div>
         </div>

@@ -113,6 +113,7 @@
     </div>
   </div>
 </div>
+<!-- modal hapus data -->
 <div class="modal fade" id="Modalhapus" tabindex="-1" role="dialog" aria-labelledby="ModalhapusLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -133,18 +134,87 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ModalprintLabel">Pilih Cetakan</h5><br>
-                <a href="<?php echo route_to('frontenduser.frontenduser.invoice');?>"><button type="button" class="btn btn-primary">Invoice</button></a>
-                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
+                <h5 class="modal-title" id="ModalprintLabel">Pilih Cetakan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-footer">
+                <a href="<?php echo route_to('frontenduser.frontenduser.invoice');?>"><button type="button" class="btn btn-primary">Invoice</button></a>
+                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
             </div>
         </div>
     </div>
+</div>
+<!-- modal edit data -->
+<div class="modal fade bd-example-modal-lg" id="modaleditdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form class="modal-body mb-1" action="<?php echo route_to('user_panel.swab.swab.register');?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <div class="form-group">
+                <label>No Ktp</label>
+                <input class="au-input au-input--full" type="text" name="no-ktp" placeholder="No KTP"/>
+            </div>
+            <div class="form-group">
+                <label>Nama</label>
+                <input class="au-input au-input--full" type="text" name="complete-name" placeholder="Nama Lengkap" />
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <input class="au-input au-input--full" type="text" name="address" placeholder="Alamat" />
+            </div>
+            <div class="form-group">
+                <label>No Telpon</label>
+                <input class="au-input au-input--full" type="text" name="phone-number" placeholder="Nomor Telpon" />
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input class="au-input au-input--full" type="date" name="birth-date" placeholder="ttl" />
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label><br />
+                <div class="form-check">
+                    <div class="radio">
+                        <label for="radio1" class="form-check-label"> <input type="radio" id="radio1" name="gender" value="1" class="form-check-input" />Laki-Laki </label>
+                    </div>
+                    <div class="radio">
+                        <label for="radio2" class="form-check-label"> <input type="radio" id="radio2" name="gender" value="2" class="form-check-input" />Perempuan </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pilih Paket</label><br />
+                <div class="container">
+                    <div class="form-check-inline form-check">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <label for="inline-radio1" class="form-check-label">
+                                    <input type="radio" id="inline-radio1" name="package" value="1" class="form-check-input"/>
+                                    <img src="assets/images/Flashlabdt.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio2" class="form-check-label">
+                                    <input type="radio" id="inline-radio2" name="package" value="2" class="form-check-input" />
+                                    <img src="assets/images/Flashlabhc.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio3" class="form-check-label">
+                                    <input type="radio" id="inline-radio3" name="package" value="3" class="form-check-input" />
+                                    <img src="assets/images/Flashlabvit.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
+        </form>
+    </div>
+  </div>
 </div>
 <?= $this->endsection('main_modal') ?>
 
@@ -182,9 +252,9 @@
                                         <tr>
                                             <td class="text-center mx-auto"> 
                                                 <a href="#" class="badge  badge-primary" data-toggle="modal" data-target="#modalverifikasi">Verifikasi</a><br />
-                                                <a href="#" class="badge  badge-success">Edit</a><br />
+                                                <a href="#" class="badge  badge-success " data-toggle="modal" data-target="#modaleditdata"  >Edit</a><br />
                                                 <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
-                                                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>" class="badge  badge-secondary">Print</a>
+                                                <a href="#" class="badge  badge-secondary" data-toggle="modal" data-target="#Modalprint">Print</a>
                                             </td>
                                             <td>Fahri</td>
                                             <td>2018-09-29 05:57</td>
