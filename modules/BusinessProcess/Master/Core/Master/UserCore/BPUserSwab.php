@@ -70,6 +70,38 @@ trait BPUserSwab{
 		}
 	}
 
+	public function BPU_delete_swab($request,$additional_param){
+		$patient_package_model = new PatientPackageModel();
+
+		$p = $this->filterValidateRequestParam($request,$additional_param);
+		$req = $p['all_param'];
+		$additional_param = $p['additional_param'];
+		$optional_info = $p['optional_info'];
+
+		$resultVE = $this->validateInputPatientVE($req,$optional_info);
+
+		if($this->validateError($resultVE)){
+			return $resultVE;
+		}else{
+			if(isset($additional_param)){
+				foreach($additional_param as $ap => $ap_v){
+					$resultVE->result->$ap = $ap_v;
+				}
+			}
+
+			$param = $resultVE->result;
+
+			#check-patient
+			$cp = $patient_package_model->join('patients p','p.patient_id = patient_package.patient_id')->where("patient_package_id",$resultVE->result->patient_package_id)->where("user_inputter",$resultVE->result->user_inputter)->findAll();
+
+			if(sizeof($cp)==1){
+				$patient_package_model->delete($cp[0]->patient_package_id);
+			}
+
+			return $resultVE;
+		}
+	}
+
 	public function BPU_get_swab_list($request,$additional_param){
 		$patient_package_model = new PatientPackageModel();
 

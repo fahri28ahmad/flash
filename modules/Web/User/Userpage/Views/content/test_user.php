@@ -71,7 +71,9 @@
 </div>
 <div class="modal fade" id="Modalhapus" tabindex="-1" role="dialog" aria-labelledby="ModalhapusLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <form class="modal-content" action="<?php echo route_to('user_panel.swab.swab.delete_swab');?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <input type="hidden" class="patient-package-id" name="patient-package-id" value="">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalhapusLabel">Apakah Anda yakin Ingin Menghapusnya</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -80,9 +82,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <a href="#"><button type="button" class="btn btn-primary">Yakin</button></a>
+                <button type="submit" class="btn btn-danger">Yakin</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <div class="modal fade" id="Modalprint" tabindex="-1" role="dialog" aria-labelledby="ModalprintLabel" aria-hidden="true">
@@ -143,7 +145,7 @@
                                             <td class="text-right">082189705433</td>
                                             <td class="text-right mx-auto">
                                                 <a href="#" class="badge  badge-success" >Edit</a><br />
-                                                <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
+                                                <a href="#" class="badge  badge-danger delete-swab" data-toggle="modal" data-target="#Modalhapus" data-id="<?php echo $m->patient_package_id;?>">Hapus</a><br />
                                                 <a href="#" class="badge print-swab badge-secondary" data-toggle="modal" data-target="#Modalprint" data-id="<?php echo $m->patient_package_id;?>">Print</a>
                                             </td>
                                         </tr>
