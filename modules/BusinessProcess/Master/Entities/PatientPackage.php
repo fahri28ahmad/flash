@@ -6,6 +6,7 @@ use CodeIgniter\Entity;
 use BusinessProcessRoot\Master\Entities\MasterEntity;
 
 use BusinessProcessRoot\Master\Models\Patient as PatientModel;
+use BusinessProcessRoot\Master\Models\Package as PackageModel;
 
 class PatientPackage extends MasterEntity
 {
@@ -20,6 +21,15 @@ class PatientPackage extends MasterEntity
         $pModel = new PatientModel();
 
         $ins = $pModel->where('patient_id',$this->attributes['patient_id'])
+        ->findAll();
+
+        return $ins;
+	}
+
+	public function get_package_detail(){
+        $pModel = new PackageModel();
+
+        $ins = $pModel->where('package_id',$this->attributes['package'])
         ->findAll();
 
         return $ins;

@@ -26,6 +26,25 @@ trait Patient{
 		if(!empty($request)){
 			foreach($request as $m => $v){
 				switch($m){
+					case 'patient-package-id':
+						if(isset($opt_info['ADDITIONAL_VALIDATION']['patient-package-id'])){
+							$string_p = implode("|", $opt_info['ADDITIONAL_VALIDATION']['patient-package-id']);
+							$string_p .= "|";
+						}else{
+							$string_p = "";
+						}
+
+						$ar = array(
+							$string_p . 'numeric|exist:patient_package.patient_package_id',
+							"Patient Package",
+							'patient_package_id'
+						);
+
+						$a_entities->patient_package_id = $v;
+
+						$rules['patient_package_id'] = $ar;
+					break;
+
 					case 'no-ktp':
 						if(isset($opt_info['ADDITIONAL_VALIDATION']['no_ktp'])){
 							$string_p = implode("|", $opt_info['ADDITIONAL_VALIDATION']['no_ktp']);

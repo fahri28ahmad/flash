@@ -66,8 +66,10 @@ $routes->setAutoRoute(true);
             $routes->group('swab',['filter' => 'authfilter:user'], function($routes){
                 $routes->group('web', function($routes){
                     $routes->post('register', '\UserpageFuncCont\HTTP\Swab::register_swab',['as' => 'user_panel.swab.swab.register']);
+                    $routes->post('delete', '\UserpageFuncCont\HTTP\Swab::delete_swab',['as' => 'user_panel.swab.swab.delete_swab']);
 
                     $routes->get('print-pdf/(:any)', '\UserpageFuncCont\HTTP\Swab::print_swab/$1',['as' => 'user_panel.swab.swab.print_swab']);
+                    $routes->get('print-pdf-invoice/(:any)', '\UserpageFuncCont\HTTP\Swab::print_swab_invoice/$1',['as' => 'user_panel.swab.swab.print_swab_invoice']);
                 });
             });
         });

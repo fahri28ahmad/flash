@@ -71,6 +71,38 @@ class Swab extends DefaultUserFuncController{
 		}
 	}
 
+	public function delete_swab(){
+		$request = $this->request;
+
+		$accepted_param = array(
+			'patient-package-id'
+		);
+
+		$mandatory_validation = array(
+			'patient-package-id',
+		);
+
+		$additional_validation = array(
+			'patient-package-id' => array("required")
+		);
+
+		$additional_param = array(
+			'user_inputter' => $this->session->user_id,
+			'ACCEPTED_PARAM' => $accepted_param,
+			'REQUEST_TYPE' => 'post',
+			'ADDITIONAL_VALIDATION' => $additional_validation,
+			'MANDATORY_VALIDATION' => $mandatory_validation
+		);
+
+		$resultVE = $this->BPU_delete_swab($request,$additional_param);
+
+		if($this->validateError($resultVE)){
+			return redirect()->route("user_panel.panel.index")->with('validate_error',$resultVE);
+		}else{
+			return redirect()->route("user_panel.panel.index");
+		}
+	}
+
 	public function print_swab($swab_id){
 		$request = $this->request;
 
@@ -118,6 +150,59 @@ class Swab extends DefaultUserFuncController{
 	        $dompdf->render();
 	        $dompdf->stream();
 			//return view("UserpageView\pdf\\swab_print",$data);
+		}else{
+			return redirect()->route("user_panel.panel.index");
+		}
+	}
+
+	public function print_swab_invoice($swab_id){
+		$request = $this->request;
+
+		$accepted_param = array(
+			'none'
+		);
+
+		$additional_param = array(
+			'patient_package_id' => $swab_id,
+			'user_inputter' => $this->session->user_id,
+			'ACCEPTED_PARAM' => $accepted_param,
+			'REQUEST_TYPE' => 'post',
+		);
+
+		$resultVE = $this->BPU_get_swab_list($request,$additional_param);
+
+		$patient_package = $resultVE->result['result_patient_package']['patient_package_list'];
+		$data = array(
+			'patient_data' => $patient_package
+		);
+
+		if(sizeof($patient_package)==1){
+
+			$result = Builder::create()
+			    ->writer(new PngWriter())
+			    ->writerOptions([])
+			    ->data('https://google.com')
+			    ->encoding(new Encoding('UTF-8'))
+			    ->errorCorrectionLevel(new ErrorCorrectionLevelHigh())
+			    ->size(300)
+			    ->margin(10)
+			    ->roundBlockSizeMode(new RoundBlockSizeModeMargin())
+			    ->labelText('Scan Disini')
+			    ->labelFont(new NotoSans(20))
+			    ->labelAlignment(new LabelAlignmentCenter())
+			    ->build();			
+
+		    $dataUri = $result->getDataUri();
+
+		    $data['barcode'] = $dataUri;
+
+	        $dompdf = new \Dompdf\Dompdf(); 
+	        $dompdf->loadHtml(view("UserpageView\pdf\\invoice",$data));
+	        $dompdf->setPaper('A4', 'portrait');
+	        $dompdf->render();
+	        $dompdf->stream();
+
+			// return view("UserpageView\pdf\\invoice",$data);
 		}else{
 			return redirect()->route("user_panel.panel.index");
 		}
