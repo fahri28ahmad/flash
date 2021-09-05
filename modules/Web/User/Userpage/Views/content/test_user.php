@@ -146,7 +146,7 @@
                                             <td class="text-right mx-auto">
                                                 <a href="#" class="badge  badge-success" >Edit</a><br />
                                                 <a href="#" class="badge  badge-danger delete-swab" data-toggle="modal" data-target="#Modalhapus" data-id="<?php echo $m->patient_package_id;?>">Hapus</a><br />
-                                                <a href="#" class="badge print-swab badge-secondary" data-toggle="modal" data-target="#Modalprint" data-id="<?php echo $m->patient_package_id;?>">Print</a>
+                                                <a href="#" class="badge print-swab badge-secondary" data-toggle="modal" data-target="#Modalprint" data-id="<?php echo $m->patient_package_id;?>" data-print-swab="<?php echo $m->allowed_swab_result_to_be_printed();?>">Print</a>
                                             </td>
                                         </tr>
                                         <?php } ?>

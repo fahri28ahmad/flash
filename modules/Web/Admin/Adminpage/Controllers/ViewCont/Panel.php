@@ -4,12 +4,12 @@
 
 namespace AdminpageViewCont;
 
-use UserTemplateViewCont\DefaultUserViewController;
+use AdminTemplateViewCont\DefaultAdminViewController;
 use Config\Services as SVC;
 use BusinessProcessRoot\Master\Models\PatientPackage as PatientPackageModel;
 use BusinessProcessRoot\Master\Core\Master\AdminCore\BPAdminSwab;
 
-class Panel extends DefaultUserViewController{
+class Panel extends DefaultAdminViewController{
 	use BPAdminSwab;
 
 	public function __construct(){

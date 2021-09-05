@@ -63,4 +63,35 @@ trait BPAdminSwab{
 			return $resultVE;
 		}
 	}
+
+	public function BPA_update_swab($request,$additional_param){
+		$patient_package_model = new PatientPackageModel();
+
+		$p = $this->filterValidateRequestParam($request,$additional_param);
+		$req = $p['all_param'];
+		$additional_param = $p['additional_param'];
+		$optional_info = $p['optional_info'];
+
+		$resultVE = $this->validateInputPatientPackageVE($req,$optional_info);
+
+		if($this->validateError($resultVE)){
+			return $resultVE;
+		}else{
+			if(isset($additional_param)){
+				foreach($additional_param as $ap => $ap_v){
+					$resultVE->result->$ap = $ap_v;
+				}
+			}
+
+			#check-patient
+			$cp = $patient_package_model->where("patient_package_id",$resultVE->result->patient_package_id)->findAll();
+
+			if(sizeof($cp)==1){
+				$patient_package_model->update($cp[0]->patient_package_id,$resultVE->result);
+			}
+
+			return $resultVE;
+		}
+
+	}
 }

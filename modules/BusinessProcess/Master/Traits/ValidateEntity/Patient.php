@@ -296,23 +296,23 @@ trait Patient{
 
 						$rules['phone_number'] = $ar;
 
-					case 'phone-number':
-						if(isset($opt_info['ADDITIONAL_VALIDATION']['phone-number'])){
-							$string_p = implode("|", $opt_info['ADDITIONAL_VALIDATION']['phone-number']);
+					case 'patient-package-id':
+						if(isset($opt_info['ADDITIONAL_VALIDATION']['patient-package-id'])){
+							$string_p = implode("|", $opt_info['ADDITIONAL_VALIDATION']['patient-package-id']);
 							$string_p .= "|";
 						}else{
 							$string_p = "";
 						}
 
 						$ar = array(
-							$string_p . 'valid_phone',
-							"Phone number",
-							'phone_number'
+							$string_p . 'numeric|exist:patient_package.patient_package_id',
+							"Patient Package Id",
+							'patient_package_id'
 						);
 
-						$a_entities->phone_number = $v;
+						$a_entities->patient_package_id = $v;
 
-						$rules['phone_number'] = $ar;
+						$rules['patient_package_id'] = $ar;
 					break;
 
 					case 'gender':
@@ -332,6 +332,25 @@ trait Patient{
 						$a_entities->gender = $v;
 
 						$rules['gender'] = $ar;
+					break;
+
+					case 'result-pos':
+						if(isset($opt_info['ADDITIONAL_VALIDATION']['result_pos'])){
+							$string_p = implode("|", $opt_info['ADDITIONAL_VALIDATION']['result_pos']);
+							$string_p .= "|";
+						}else{
+							$string_p = "";
+						}
+
+						$ar = array(
+							$string_p . 'isbetween:1.2',
+							"Result Swab",
+							'result_pos'
+						);
+
+						$a_entities->result_pos = $v;
+
+						$rules['result_pos'] = $ar;
 					break;
 
 					case 'package':

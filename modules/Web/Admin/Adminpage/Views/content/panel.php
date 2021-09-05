@@ -1,7 +1,222 @@
 <?php $this->extend('AdminTemplateView\master\master_admin_final') ?>
 
 <?= $this->section('main_modal') ?>
-
+<!-- tambah data  -->
+<div class="modal fade bd-example-modal-lg" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form class="modal-body mb-1" action="<?php echo route_to('user_panel.swab.swab.register');?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <div class="form-group">
+                <label>No Ktp</label>
+                <input class="au-input au-input--full" type="text" name="no-ktp" placeholder="No KTP"/>
+            </div>
+            <div class="form-group">
+                <label>Nama</label>
+                <input class="au-input au-input--full" type="text" name="complete-name" placeholder="Nama Lengkap" />
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <input class="au-input au-input--full" type="text" name="address" placeholder="Alamat" />
+            </div>
+            <div class="form-group">
+                <label>No Telpon</label>
+                <input class="au-input au-input--full" type="text" name="phone-number" placeholder="Nomor Telpon" />
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input class="au-input au-input--full" type="date" name="birth-date" placeholder="ttl" />
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label><br />
+                <div class="form-check">
+                    <div class="radio">
+                        <label for="radio1" class="form-check-label"> <input type="radio" id="radio1" name="gender" value="1" class="form-check-input" />Laki-Laki </label>
+                    </div>
+                    <div class="radio">
+                        <label for="radio2" class="form-check-label"> <input type="radio" id="radio2" name="gender" value="2" class="form-check-input" />Perempuan </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pilih Paket</label><br />
+                <div class="container">
+                    <div class="form-check-inline form-check">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <label for="inline-radio1" class="form-check-label">
+                                    <input type="radio" id="inline-radio1" name="package" value="1" class="form-check-input"/>
+                                    <img src="assets/images/Flashlabdt.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio2" class="form-check-label">
+                                    <input type="radio" id="inline-radio2" name="package" value="2" class="form-check-input" />
+                                    <img src="assets/images/Flashlabhc.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio3" class="form-check-label">
+                                    <input type="radio" id="inline-radio3" name="package" value="3" class="form-check-input" />
+                                    <img src="assets/images/Flashlabvit.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- verifikasi modal -->
+<div class="modal fade bd-example-modal-lg" id="modalverifikasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form class="modal-body mb-1" action="<?php echo route_to('admin_panel.swab.swab.update_swab');?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <input type="hidden" class="patient-package-id" name="patient-package-id" value="">
+            <div class="form-group">
+                <label>No Ktp</label><h4>72192003182398213</h4>
+            </div>
+            <div class="form-group">
+                <label>Nama</label><h4>namanya</h4>
+            </div>
+            <div class="form-group">
+                <label>Alamat</label><h4>jl beringain no 12 palu</h4>
+            </div>
+            <div class="form-group">
+                <label>No Telpon</label><h4>082188192892</h4>
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label><h4>tanggallahirnya</h4>
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label><h4>jenis kelaminnya</h4>
+            </div>
+            <div class="form-group">
+                <label>Hasil swab</label><br />
+                <div class="form-check">
+                    <div class="radio">
+                        <label for="radio1" class="form-check-label"> <input type="radio" id="radio1" name="result-pos" value="1" class="form-check-input" />Positif</label>
+                    </div>
+                    <div class="radio">
+                        <label for="radio2" class="form-check-label"> <input type="radio" id="radio2" name="result-pos" value="2" class="form-check-input" />Negatif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Paket</label><h4>paketnya</h4>
+            </div>
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- modal hapus data -->
+<div class="modal fade" id="Modalhapus" tabindex="-1" role="dialog" aria-labelledby="ModalhapusLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalhapusLabel">Apakah Anda yakin Ingin Menghapusnya</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                <a href="#"><button type="button" class="btn btn-primary">Yakin</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Modalprint" tabindex="-1" role="dialog" aria-labelledby="ModalprintLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalprintLabel">Pilih Cetakan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <a href="<?php echo route_to('frontenduser.frontenduser.invoice');?>"><button type="button" class="btn btn-primary">Invoice</button></a>
+                <a href="<?php echo route_to('frontenduser.frontenduser.print');?>"><button type="button" class="btn btn-primary">Hasil Swab</button></a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal edit data -->
+<div class="modal fade bd-example-modal-lg" id="modaleditdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form class="modal-body mb-1" action="<?php echo route_to('user_panel.swab.swab.register');?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+            <div class="form-group">
+                <label>No Ktp</label>
+                <input class="au-input au-input--full" type="text" name="no-ktp" placeholder="No KTP"/>
+            </div>
+            <div class="form-group">
+                <label>Nama</label>
+                <input class="au-input au-input--full" type="text" name="complete-name" placeholder="Nama Lengkap" />
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <input class="au-input au-input--full" type="text" name="address" placeholder="Alamat" />
+            </div>
+            <div class="form-group">
+                <label>No Telpon</label>
+                <input class="au-input au-input--full" type="text" name="phone-number" placeholder="Nomor Telpon" />
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input class="au-input au-input--full" type="date" name="birth-date" placeholder="ttl" />
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label><br />
+                <div class="form-check">
+                    <div class="radio">
+                        <label for="radio1" class="form-check-label"> <input type="radio" id="radio1" name="gender" value="1" class="form-check-input" />Laki-Laki </label>
+                    </div>
+                    <div class="radio">
+                        <label for="radio2" class="form-check-label"> <input type="radio" id="radio2" name="gender" value="2" class="form-check-input" />Perempuan </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pilih Paket</label><br />
+                <div class="container">
+                    <div class="form-check-inline form-check">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <label for="inline-radio1" class="form-check-label">
+                                    <input type="radio" id="inline-radio1" name="package" value="1" class="form-check-input"/>
+                                    <img src="assets/images/Flashlabdt.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio2" class="form-check-label">
+                                    <input type="radio" id="inline-radio2" name="package" value="2" class="form-check-input" />
+                                    <img src="assets/images/Flashlabhc.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <label for="inline-radio3" class="form-check-label">
+                                    <input type="radio" id="inline-radio3" name="package" value="3" class="form-check-input" />
+                                    <img src="assets/images/Flashlabvit.png" alt="CoolAdmin" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Kirim Data</button>
+        </form>
+    </div>
+  </div>
+</div>
 <?= $this->endsection('main_modal') ?>
 
 <?= $this->section('content') ?>
@@ -25,28 +240,29 @@
                                 <table class="table table-borderless table-striped table-earning">
                                     <thead>
                                         <tr>
-                                            <th>date</th>
+                                            <th class="text-right">aksi</th>
                                             <th>noID</th>
+                                            <th>date</th>
                                             <th>name</th>
+                                            <th>Hasil</th>
                                             <th class="text-right">TTL</th>
                                             <th class="text-right">no tlp</th>
-                                            <th class="text-right">aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($patient_package as $m){ ?>
                                         <tr>
                                             <td class="text-center mx-auto"> 
-                                                <a href="#" class="badge  badge-primary" data-toggle="modal" data-target="#modalverifikasi">Verifikasi</a><br />
-                                                <a href="#" class="badge  badge-success " data-toggle="modal" data-target="#modaleditdata"  >Edit</a><br />
-                                                <a href="#" class="badge  badge-danger" data-toggle="modal" data-target="#Modalhapus">Hapus</a><br />
-                                                <a href="#" class="badge  badge-secondary" data-toggle="modal" data-target="#Modalprint">Print</a>
+                                                <a href="#" class="badge verify-swab badge-primary" data-toggle="modal" data-target="#modalverifikasi" data-id="<?php echo $m->patient_package_id;?>">Verifikasi</a><br />
                                             </td>
-                                            <td>Fahri</td>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>001</td>
-                                            <td class="text-center">Denpasar 28/11-1997</td>
-                                            <td class="text-left ">082189705433</td>
+                                            <td>swab-<?php echo $m->patient_package_id;?></td>
+                                            <td><?php echo $m->get_date_swab();?></td>
+                                            <td><?php echo $m->get_patient_detail()[0]->complete_name;?></td>
+                                            <td><?php echo $m->get_result_string();?></td>
+                                            <td><?php echo $m->get_patient_detail()[0]->get_birth_date();?></td>
+                                            <td><?php echo $m->get_patient_detail()[0]->phone_number;?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

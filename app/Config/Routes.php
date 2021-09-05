@@ -80,6 +80,12 @@ $routes->setAutoRoute(true);
         $routes->group('admin-panel',['filter' => 'authfilter:admin'], function($routes)
         {
             $routes->get('/', '\AdminpageViewCont\Panel::index',['as' => 'admin_panel.panel.index']);
+
+            $routes->group('swab',['filter' => 'authfilter:admin'], function($routes){
+                $routes->group('web', function($routes){
+                    $routes->post('update', '\AdminpageFuncCont\HTTP\Swab::update_swab',['as' => 'admin_panel.swab.swab.update_swab']);
+                });
+            });
         });
     //}
 //}

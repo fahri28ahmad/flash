@@ -12,7 +12,7 @@ class PatientPackage extends Model
     protected $primaryKey = 'patient_package_id';
 
     protected $returnType = "BusinessProcessRoot\Master\Entities\PatientPackage";
-    protected $allowedFields = array('patient_package_id', 'patient_id','package','date_inserted','date_swab','package_status');
+    protected $allowedFields = array('patient_package_id', 'patient_id','package','date_inserted','date_swab','package_status','result_pos','public_key');
 
     public function get_patient_package_master($patient_package){
         $db = \Config\Database::connect();
