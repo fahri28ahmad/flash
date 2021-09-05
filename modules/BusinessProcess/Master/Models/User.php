@@ -26,7 +26,7 @@ class User extends Model
     public function get_user_master($user){
         $db = \Config\Database::connect();
 
-        $builder = $db->table('user u');
+        $builder = $db->table('users u');
         $builderClone = $builder;
 
         if(isset($user->user_id)){

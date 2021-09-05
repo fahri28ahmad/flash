@@ -16,17 +16,17 @@
                             </a>
                         </div>
                         <div class="login-form">
-                        <form action="<?php echo route_to('user.login.view'); ?>" method="post">
+                        <form action="<?php echo route_to('admin.login.view'); ?>" method="post">
                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <div class="form-group">
                                 <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="user-email" placeholder="Email">
-                                    <?php echo FHHelperShowFormError($validate_error,"user_email"); ?>
+                                    <input class="au-input au-input--full" type="email" name="admin-email" placeholder="Email">
+                                    <?php echo FHHelperShowFormError($validate_error,"admin_email"); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="user-password" placeholder="Password">
-                                    <?php echo FHHelperShowFormError($validate_error,"user_password"); ?>
+                                    <input class="au-input au-input--full" type="password" name="admin-password" placeholder="Password">
+                                    <?php echo FHHelperShowFormError($validate_error,"admin_password"); ?>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Masuk</button>
                                 

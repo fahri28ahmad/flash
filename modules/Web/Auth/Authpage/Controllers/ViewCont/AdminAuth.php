@@ -6,14 +6,14 @@ namespace AuthpageViewCont;
 
 use BusinessProcessRoot\Master\Models\Admin as UserModel;
 
-use BusinessProcessRoot\Master\Entities\Admin as UserEntities;
+use BusinessProcessRoot\Master\Entities\Admin as AdminEntities;
 
 use BusinessProcessRoot\Master\Entities\SessionCookies\AdminSession;
 
 use AuthTemplateViewCont\DefaultAuthViewController;
 use Config\Services as SVC;
 
-class TeacherAuth extends DefaultAuthViewController{
+class AdminAuth extends DefaultAuthViewController{
 	protected $systemMenu;
 
 	public function __construct(){
@@ -28,18 +28,19 @@ class TeacherAuth extends DefaultAuthViewController{
 	}
 
 	public function login(){
-		$error = $this->session_handling->getFlashdata('error');
+		$error = $this->session_handling->getFlashdata('validate_error');
 
 		if(!empty($error)){
 			if(isset($error->error_message)){
-				$this->set_data_view("error",$error->error_message);
+				$this->set_data_view("validate_error",$error->error_message);
 			}else{
-				$this->set_data_view("error",array($error));
+				$this->set_data_view("validate_error",array($error));
 			}
 		}else{
-			$this->set_data_view("error",null);
+			$this->set_data_view("validate_error",null);
 		}
 
-		return $this->tc_view("AuthpageView\\teacher\login");
+		return $this->tc_view("AuthpageView\admin\login");
 	}
+
 }

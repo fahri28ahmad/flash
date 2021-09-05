@@ -48,7 +48,7 @@ $routes->setAutoRoute(true);
         {
             $routes->get('/admin-login', '\AuthpageViewCont\AdminAuth::login',['as' => 'admin.login.view']);
 
-            $routes->post('/admin-login', '\AuthpageFuncCont\FAdminAuth::login');
+            $routes->post('/admin-login', '\AuthpageFuncCont\HTTP\FAdminAuth::login');
 
             $routes->get('/user-login', '\AuthpageViewCont\UserAuth::login',['as' => 'user.login.view']);
             $routes->get('/user-register', '\AuthpageViewCont\UserAuth::register',['as' => 'user.register.view']);
@@ -72,6 +72,14 @@ $routes->setAutoRoute(true);
                     $routes->get('print-pdf-invoice/(:any)', '\UserpageFuncCont\HTTP\Swab::print_swab_invoice/$1',['as' => 'user_panel.swab.swab.print_swab_invoice']);
                 });
             });
+        });
+    //}
+
+
+    //for admin{
+        $routes->group('admin-panel',['filter' => 'authfilter:admin'], function($routes)
+        {
+            $routes->get('/', '\AdminpageViewCont\Panel::index',['as' => 'admin_panel.panel.index']);
         });
     //}
 //}
